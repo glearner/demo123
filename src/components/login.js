@@ -23,6 +23,10 @@ const Login = withRouter((props) => {
 			.then(function (response) {
 				if (response.status === 200) {
 					if (response?.data?.access_token) {
+						localStorage.setItem(
+							"token",
+							JSON.stringify(response?.data?.access_token)
+						);
 						dispatch(loginUserSuccess(response?.data?.access_token));
 						props.history.push({
 							pathname: "/",
