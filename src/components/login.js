@@ -61,7 +61,7 @@ const Login = withRouter((props) => {
 						<input
 							type='password'
 							name='password'
-							className='input-field'
+							className='password-input-field'
 							onChange={(event) => setPassword(event.target.value)}
 						/>
 					</label>
