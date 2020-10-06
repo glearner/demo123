@@ -52,4 +52,13 @@ code {
   height: 2rem;
   width: 15rem;
   margin-bottom: .5rem;
+  border-radius: .2rem;
+}
+
+.password-input-field{
+  margin-left: 1.35rem;
+  height: 2rem;
+  width: 15rem;
+  margin-bottom: .5rem;
+  border-radius: .2rem;
 }
