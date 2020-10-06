@@ -46,6 +46,40 @@ code {
 
 }
 
+.box-image-wrapper{
+  min-height: 150px;
+  height: 40vh;
+}
+
+.dropdown-wrapper{
+  display: flex;
+  justify-content: center;
+}
+
+.dropdown-wrapper{
+  display: flex;
+  margin-top: 3rem;
+}
+
+.flex-box{
+  display: flex;
+}
+.flex-subimage-wrapper{
+  height: 15vh;
+  min-height: 150px;
+  margin: 1rem;
+
+}
+
+.dropdowns{
+  margin: 0 1rem;
+}
+
+.dropdown-items{
+  height: 1.8rem;
+  width: 10rem;
+}
+
 
 .input-field{
   margin-left: 1rem;

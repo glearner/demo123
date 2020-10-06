@@ -1,19 +1,31 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import DropDown from "../components/dropdown";
+import ImageBox from "./imageBox";
 
 const Home = () => {
-	const tokenStr = useSelector((state) => console.log(state));
+	const [data, setData] = useState([]);
 	useEffect(() => {
 		axios
-			.get("/sample_vendor/validate/?nitems=1")
-			.then((data) => console.log(data));
-	});
+			.get("/sample_vendor/validate/?nitems=2")
+			.then((data) => setData(data.data));
+	}, []);
+
+	const renderBox = () => {
+		return data.map((i) => <ImageBox data={i} />);
+	};
+
+	const onDragEnd = () => {};
 	return (
-		<div>
-			<DropDown />
-		</div>
+		<>
+			<div className='dropdown-wrapper'>
+				<DropDown />
+			</div>
+			<DragDropContext onDragEnd={onDragEnd}>
+				<div style={{ margin: "1rem" }}>{renderBox()}</div>
+			</DragDropContext>
+		</>
 	);
 };
 
