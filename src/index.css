@@ -64,6 +64,22 @@ code {
 .flex-box{
   display: flex;
 }
+.blue-btn{
+  background-color: cornflowerblue;
+    margin-bottom: 5rem;
+    width: 9rem;
+    text-align: center;
+    padding: 1rem 0rem;
+    margin: auto;
+    margin-bottom: 5rem;
+    cursor: pointer;
+}
+
+.close-btn{
+  position: absolute;
+  right: 0rem;
+}
+
 .flex-subimage-wrapper{
   height: 15vh;
   min-height: 150px;

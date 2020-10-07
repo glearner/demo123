@@ -1,14 +1,24 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Container from "react-bootstrap/Container";
-// import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+
+import { categoryUpdate, genderUpdate } from "../actions";
 
 const Dropdown = () => {
-	//   const tokenStr = useSelector((state) => console.log(state));
 	const [Vendordropwdown, setVendorDropdown] = useState();
 	const [DepartmentDropdown, setDepartmentDropdown] = useState();
 	const [CategoryDrpdown, setCategoryDrodpwn] = useState();
 	const [errors, setError] = useState();
+	const dispatch = useDispatch();
+
+	const categoryChange = (event) => {
+		dispatch(categoryUpdate(event.currentTarget.value));
+	};
+
+	const genderChange = (event) => {
+		dispatch(genderUpdate(event.currentTarget.value));
+	};
 
 	useEffect(() => {
 		axios
@@ -29,9 +39,11 @@ const Dropdown = () => {
 			<div className='dropdown-wrapper'>
 				<div className='dropdowns'>
 					<select name='Vendors' id='Vendor' className='dropdown-items'>
+						<option value='' selected disabled hidden>
+							Vendor
+						</option>
 						{Array.isArray(Vendordropwdown) ? (
 							Vendordropwdown?.map(function (item, index) {
-								console.log("vendor", item);
 								return <option value={item}>{item}</option>;
 							})
 						) : (
@@ -40,14 +52,30 @@ const Dropdown = () => {
 					</select>
 				</div>
 				<div className='dropdowns'>
-					<select name='Departments' id='Department' className='dropdown-items'>
+					<select
+						onClick={genderChange}
+						name='Departments'
+						id='Department'
+						className='dropdown-items'
+					>
+						<option value='' selected disabled hidden>
+							Gender
+						</option>
 						{DepartmentDropdown?.map(function (item, index) {
 							return <option value={item}>{item}</option>;
 						})}
 					</select>
 				</div>
 				<div className='dropdowns'>
-					<select name='Categories' id='Category' className='dropdown-items'>
+					<select
+						onClick={categoryChange}
+						name='Categories'
+						id='Category'
+						className='dropdown-items'
+					>
+						<option value='' selected disabled hidden>
+							Category
+						</option>
 						{CategoryDrpdown?.map(function (item, index) {
 							return <option value={item}>{item}</option>;
 						})}
