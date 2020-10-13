@@ -14,10 +14,18 @@ code {
 
 .vendor-wrapper {
   margin-left: 1rem;
-  height: 1.2rem;
+  height: 1.5rem;
   width: 10 rem;
   margin-bottom: 0.5rem;
   border-radius: 0.2rem;
+}
+.flex {
+  display: flex;
+}
+.box-image-box-wrapper {
+  display: flex;
+  overflow: auto;
+  max-width: 90rem;
 }
 
 .login-container {
@@ -47,11 +55,12 @@ code {
   margin-top: 1rem;
   border: solid 1px black;
   background-color: #f09797;
+  cursor: pointer;
 }
 
 .box-image-wrapper {
   min-height: 150px;
-  height: 40vh;
+  height: 45vh;
 }
 
 .dropdown-wrapper {
@@ -61,7 +70,7 @@ code {
 
 .dropdown-wrapper {
   display: flex;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .flex-box {
@@ -79,12 +88,32 @@ code {
   cursor: pointer;
   color: white;
 }
+
+.logout-dropdowns {
+  position: absolute;
+  right: 2rem;
+  top: 1rem;
+}
+
+.red-btn-filter {
+  background-color: red;
+  margin-bottom: 5rem;
+  width: 9rem;
+  text-align: center;
+  padding: 0.5rem 0rem;
+  margin: auto;
+  margin-bottom: 5rem;
+  cursor: pointer;
+  color: white;
+}
 .blue-btn {
   background-color: cornflowerblue;
   margin-bottom: 5rem;
   width: 9rem;
   text-align: center;
   padding: 1rem 0rem;
+  color: white;
+  border-color: white;
   margin: auto;
   margin-bottom: 5rem;
   cursor: pointer;
